@@ -20,32 +20,32 @@ const NOTE_LABELS: Record<string, string> = {
 };
 
 const CHORD_TYPES: ChordType[] = [
-  { name: 'Dur', suffix: '', intervals: [0, 4, 7] },
-  { name: 'Moll', suffix: 'm', intervals: [0, 3, 7] },
-  { name: 'Dominantseptakkord', suffix: '7', intervals: [0, 4, 7, 10] },
-  { name: 'Großer Septakkord', suffix: 'Maj7', intervals: [0, 4, 7, 11] },
-  { name: 'Kleiner Septakkord', suffix: 'm7', intervals: [0, 3, 7, 10] },
-  { name: 'Sextakkord', suffix: '6', intervals: [0, 4, 7, 9] },
-  { name: 'Moll-Sextakkord', suffix: 'm6', intervals: [0, 3, 7, 9] },
-  { name: 'Dominantnonenakkord', suffix: '9', intervals: [0, 4, 7, 10, 14] },
-  { name: 'Großer Nonenakkord', suffix: 'Maj9', intervals: [0, 4, 7, 11, 14] },
-  { name: 'Kleiner Nonenakkord', suffix: 'm9', intervals: [0, 3, 7, 10, 14] },
-  { name: 'Add9-Akkord', suffix: 'add9', intervals: [0, 4, 7, 14] },
-  { name: 'Sus4-Akkord', suffix: 'sus4', intervals: [0, 5, 7] },
-  { name: 'Sus2-Akkord', suffix: 'sus2', intervals: [0, 2, 7] },
-  { name: 'Übermäßiger Akkord', suffix: 'aug', intervals: [0, 4, 8] },
-  { name: 'Verminderter Akkord', suffix: 'dim', intervals: [0, 3, 6] },
-  { name: 'Verminderter Septakkord', suffix: 'dim7', intervals: [0, 3, 6, 9] },
-  { name: 'Halbverminderter Septakkord', suffix: 'm7b5', intervals: [0, 3, 6, 10] },
-  { name: 'Moll-Akkord mit großer Septime', suffix: 'm(Maj7)', intervals: [0, 3, 7, 11] },
-  { name: 'Septakkord mit verminderter Quinte', suffix: '7b5', intervals: [0, 4, 6, 10] },
-  { name: 'Septakkord mit übermäßiger Quinte', suffix: '7#5', intervals: [0, 4, 8, 10] },
-  { name: 'Septakkord mit kleiner None', suffix: '7b9', intervals: [0, 4, 7, 10, 13] },
-  { name: 'Septakkord mit übermäßiger None', suffix: '7#9', intervals: [0, 4, 7, 10, 15] },
-  { name: '7sus4-Akkord', suffix: '7sus4', intervals: [0, 5, 7, 10] },
-  { name: '9sus4-Akkord', suffix: '9sus4', intervals: [0, 5, 7, 10, 14] },
-  { name: 'Undezimenakkord', suffix: '11', intervals: [0, 4, 7, 10, 14, 17] },
-  { name: 'Tredezimenakkord', suffix: '13', intervals: [0, 4, 7, 10, 14, 17, 21] },
+  { name: 'Maior', suffix: '', intervals: [0, 4, 7] },
+  { name: 'Menor', suffix: 'm', intervals: [0, 3, 7] },
+  { name: 'Sétima de Dominante', suffix: '7', intervals: [0, 4, 7, 10] },
+  { name: 'Sétima Maior', suffix: 'Maj7', intervals: [0, 4, 7, 11] },
+  { name: 'Sétima Menor', suffix: 'm7', intervals: [0, 3, 7, 10] },
+  { name: 'Sexta', suffix: '6', intervals: [0, 4, 7, 9] },
+  { name: 'Sexta Menor', suffix: 'm6', intervals: [0, 3, 7, 9] },
+  { name: 'Nona de Dominante', suffix: '9', intervals: [0, 4, 7, 10, 14] },
+  { name: 'Nona Maior', suffix: 'Maj9', intervals: [0, 4, 7, 11, 14] },
+  { name: 'Nona Menor', suffix: 'm9', intervals: [0, 3, 7, 10, 14] },
+  { name: 'Nona Adicionada', suffix: 'add9', intervals: [0, 4, 7, 14] },
+  { name: 'Suspenso 4', suffix: 'sus4', intervals: [0, 5, 7] },
+  { name: 'Suspenso 2', suffix: 'sus2', intervals: [0, 2, 7] },
+  { name: 'Aumentado', suffix: 'aug', intervals: [0, 4, 8] },
+  { name: 'Diminuto', suffix: 'dim', intervals: [0, 3, 6] },
+  { name: 'Sétima Diminuta', suffix: 'dim7', intervals: [0, 3, 6, 9] },
+  { name: 'Sétima Meio-Diminuta', suffix: 'm7b5', intervals: [0, 3, 6, 10] },
+  { name: 'Menor com Sétima Maior', suffix: 'm(Maj7)', intervals: [0, 3, 7, 11] },
+  { name: 'Sétima com Quinta Bemol', suffix: '7b5', intervals: [0, 4, 6, 10] },
+  { name: 'Sétima com Quinta Aumentada', suffix: '7#5', intervals: [0, 4, 8, 10] },
+  { name: 'Sétima com Nona Bemol', suffix: '7b9', intervals: [0, 4, 7, 10, 13] },
+  { name: 'Sétima com Nona Aumentada', suffix: '7#9', intervals: [0, 4, 7, 10, 15] },
+  { name: 'Sétima Suspensa 4', suffix: '7sus4', intervals: [0, 5, 7, 10] },
+  { name: 'Nona Suspensa 4', suffix: '9sus4', intervals: [0, 5, 7, 10, 14] },
+  { name: 'Décima Primeira', suffix: '11', intervals: [0, 4, 7, 10, 14, 17] },
+  { name: 'Décima Terceira', suffix: '13', intervals: [0, 4, 7, 10, 14, 17, 21] },
 ];
 
 // Components
@@ -129,15 +129,15 @@ const CoverPage = () => (
       <Music size={100} strokeWidth={1.5} />
     </div>
     <h1 className="text-7xl font-black tracking-tighter text-gray-900 mb-4 uppercase">
-      Vollständiges Akkord-Wörterbuch
+      Dicionário Completo de Acordes
     </h1>
     <h2 className="text-3xl font-light text-gray-600 mb-16 tracking-widest uppercase">
-      Der ultimative Leitfaden für Keyboard und Klavier
+      O Guia Definitivo para Teclado e Piano
     </h2>
     
     <div className="max-w-2xl mx-auto space-y-8 text-gray-500 mb-24">
       <p className="text-xl leading-relaxed">
-        Ein umfassendes Nachschlagewerk mit 26 Akkordvariationen in allen 12 Tonarten, insgesamt 312 detaillierte Diagramme.
+        Uma referência completa com 26 variações de acordes em todos os 12 tons, totalizando 312 diagramas detalhados.
       </p>
       <div className="h-1.5 w-32 bg-emerald-200 mx-auto rounded-full" />
     </div>
@@ -148,10 +148,10 @@ const CoverPage = () => (
           <Copyright size={20} />
           <span className="text-lg font-medium">2026 - Eliab Campos Teclas</span>
         </div>
-        <span className="text-sm">Alle Rechte vorbehalten</span>
+        <span className="text-sm">Todos os direitos reservados</span>
       </div>
       <p className="text-sm text-gray-400 max-w-lg mx-auto mt-4">
-        Dieses Material ist für den persönlichen und pädagogischen Gebrauch bestimmt. Kommerzielle Vervielfältigung oder unbefugte Weitergabe ist gesetzlich verboten.
+        Este material é destinado ao uso pessoal e educativo. A reprodução comercial ou distribuição não autorizada é proibida por lei.
       </p>
     </div>
   </div>
@@ -163,7 +163,7 @@ const SectionHeader: React.FC<{ title: string }> = ({ title }) => (
       <span className="bg-emerald-500 text-white w-14 h-14 rounded-xl flex items-center justify-center text-3xl">
         {title}
       </span>
-      {title}-Akkorde
+      Acordes em {title}
     </h3>
   </div>
 );
@@ -178,7 +178,7 @@ export default function App() {
           className="flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full shadow-2xl transition-all active:scale-95 font-black text-lg"
         >
           <Printer size={24} />
-          Vollständiges PDF generieren
+          Gerar PDF Completo
         </button>
       </div>
 
